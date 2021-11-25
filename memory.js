@@ -90,10 +90,19 @@ const memoryCards = Vue.createApp({
                     } else {
                         setTimeout(() => this.resetCards(selectedCard, card), 600);
                     }
+                    updateCard(card);
                 }
             });
         },
 
+
+        updateCard(card) {
+            if(card.turned == true){
+                card.currentPicture = card.frontPicture;
+            }else{
+                card.currentPicture = this.backPicture;
+            }
+        },
 
         pairCards(cardOne, cardTwo) {
             cardOne.paired = true;
