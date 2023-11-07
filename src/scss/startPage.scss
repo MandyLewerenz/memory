@@ -1,0 +1,71 @@
+#startGame{
+  height: calc(100vh - 60px);
+  max-width: 90vw; 
+  display: flex;
+  justify-content: center;
+}
+
+.first-container {
+  height: 35%;
+  background-color: #CDB4DB;
+  padding: 0;
+
+  .bg-container{
+    height: 100%;
+
+    div {
+      height: 100%;
+      background-size: contain;
+      background-repeat: no-repeat;
+    
+      &.bgLeft {
+        background-image: url('../assets/bgLeft.png');
+        background-position: left center;
+      }
+      &.bgRight {
+        background-image: url('../assets/bgRight.png');
+        background-position: right center;
+      }
+    }
+  }
+}
+
+.image-container {
+  height: 65%;
+  position: relative;
+ 
+  .rounded-circle-image {
+    width: 350px;
+    height: 350px !important;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 8px solid #fff;
+    position: absolute;
+    top: -210px;
+  }
+  .startPageHeading{
+    color:darkgray; 
+    text-shadow: 1px 2px 1px rgba(205, 180, 219, 0.5);
+  }
+}
+  
+@media (max-width: 768px) {
+  .first-container {
+    height: 30%;
+  }
+  .image-container {
+    height: 70%;
+  
+    .rounded-circle-image {
+      width: 200px;
+      height: 200px !important;
+      top: -103px;
+    }
+  }
+}  
+
+@media (min-width: 768px) {
+  .mt-50{
+    margin-top: 50px;
+  }
+}  
