@@ -73,7 +73,7 @@ export default {
         return {
             name: 'Mandy Lewerenz',
             email: 'mandy.lwrz@gmail.com',
-            picture: require('@/assets/bewerbungsbild.jpg'),
+            picture: require('@/assets/bewerbungsbild2.jpg'),
             isHidden: false,
             cardsList: [
                 {
