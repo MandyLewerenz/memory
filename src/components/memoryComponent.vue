@@ -180,6 +180,7 @@ export default {
     },
     methods: {
         memoryClick(selectedCard) {
+            if(!selectedCard.paired){
             selectedCard.currentPicture = selectedCard.frontPicture;
             selectedCard.turned = !selectedCard.turned;
 
@@ -193,6 +194,7 @@ export default {
                     this.updateCard(card);
                 }
             });
+        }
         },
         updateCard(card) {
             if (card.turned == true) {
