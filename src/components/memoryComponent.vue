@@ -1,5 +1,4 @@
 <template>
-
     <nav v-if="isHidden" class="navbar navbar-expand-lg navbar-light stroke">
         <div class="container-fluid h-100">
 
@@ -25,8 +24,10 @@
                     <div class="col-6 bgRight"></div>
                 </div>
             </div>
-            <div class="col-md-8 col-10 image-container d-flex flex-column align-items-center justify-content-center text-center">
-                <img :src="picture" class="rounded-circle img-fluid rounded-circle-image" id="startPicture" alt="startPicture" />
+            <div
+                class="col-md-8 col-10 image-container d-flex flex-column align-items-center justify-content-center text-center">
+                <img :src="picture" class="rounded-circle img-fluid rounded-circle-image" id="startPicture"
+                    alt="startPicture" />
                 <div class="mt-50">
                     <h1 class="startPageHeading">{{ name }}</h1>
                     <h3 class="startPageHeading">E-Mail: {{ email }}</h3>
@@ -39,16 +40,17 @@
     <div v-if="isHidden" id="startGame" class="container-fluid">
 
         <div class="row align-items-center">
-            <div v-for="card in cardsList" :key="card.id" class="col-4 col-md-3 col-xl-2" > 
-                <div class="d-block my-2" :class="{ 'matchOpacity': card.paired }" @click="memoryClick(card)" style="object-fit: fill; ">
+            <div v-for="card in cardsList" :key="card.id" class="col-4 col-md-3 col-xl-2">
+                <div class="d-block my-2" :class="{ 'matchOpacity': card.paired }" @click="memoryClick(card)"
+                    style="object-fit: fill; ">
                     <img :src="card.currentPicture" class="img-fluid">
                 </div>
             </div>
 
-            <div id="overlay" :style="[gameFinished ? {'display': 'block'} : {'display': 'none'}]">
+            <div id="overlay" :style="[gameFinished ? { 'display': 'block' } : { 'display': 'none' }]">
                 <div class="pyro">
                     <div class="before"></div>
-                    <div class="after"></div> 
+                    <div class="after"></div>
                 </div>
                 <div id="overlayContent">
                     <h1>Gewonnen!</h1>
@@ -58,7 +60,6 @@
         </div>
 
     </div>
-
 </template>
   
 <script>
@@ -180,21 +181,21 @@ export default {
     },
     methods: {
         memoryClick(selectedCard) {
-            if(!selectedCard.paired){
-            selectedCard.currentPicture = selectedCard.frontPicture;
-            selectedCard.turned = !selectedCard.turned;
+            if (!selectedCard.paired) {
+                selectedCard.currentPicture = selectedCard.frontPicture;
+                selectedCard.turned = !selectedCard.turned;
 
-            this.cardsList.forEach((card) => {
-                if (card.paired == false && card.turned == true && card.id != selectedCard.id) {
-                    if (card.name == selectedCard.name) {
-                        this.pairCards(selectedCard, card);
-                    } else {
-                        setTimeout(() => this.resetCards(selectedCard, card), 600);
+                this.cardsList.forEach((card) => {
+                    if (card.paired == false && card.turned == true && card.id != selectedCard.id) {
+                        if (card.name == selectedCard.name) {
+                            this.pairCards(selectedCard, card);
+                        } else {
+                            setTimeout(() => this.resetCards(selectedCard, card), 600);
+                        }
+                        this.updateCard(card);
                     }
-                    this.updateCard(card);
-                }
-            });
-        }
+                });
+            }
         },
         updateCard(card) {
             if (card.turned == true) {

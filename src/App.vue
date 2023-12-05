@@ -1,13 +1,13 @@
 <template>
-    <memoryComponent />
+  <memoryComponent />
 </template>
 
 <script>
-  import memoryComponent from './components/memoryComponent.vue';
+import memoryComponent from './components/memoryComponent.vue';
 
-  export default {
-    components: {
-      memoryComponent,
-    }
-  };
+export default {
+  components: {
+    memoryComponent,
+  }
+};
 </script>

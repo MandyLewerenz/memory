@@ -15,16 +15,15 @@
             </div>
         </div>
     </nav>
-  
 </template>
 
 <script>
-    export default {
-        data() {
+export default {
+    data() {
         return {
             isHidden: false,
             counterPaired: 0,
         }
     }
-    }
+}
 </script>
