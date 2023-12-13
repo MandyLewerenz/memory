@@ -18,9 +18,6 @@
 </template>
 
 <script>
-
-const emits = defineEmits(['startMemory']);
-
 export default {
     data() {
         return {
